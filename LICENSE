@@ -19,3 +19,28 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+---
+
+### **3. Setting Up GitHub Codespaces (Step-by-Step)**
+
+Once the repo is created:
+
+1.  **Click the green `<> Code` button.**
+2.  **Click the "Codespaces" tab.**
+3.  **Click "Create codespace on main."**
+4.  Once the terminal opens at the bottom, follow the instructions from my previous response:
+    * **Run the `sysctl` command** (Required for the database).
+    * **Create the folders** as we discussed (`infrastructure`, `node_brain`, etc.).
+    * **Paste the code** into the files.
+
+---
+
+### **A Pro-Tip for your Portfolio:**
+When you share this project on LinkedIn or your Resume, **do not** say "I made a security app." 
+
+**Say this:**
+> "I pioneered a prototype for **VERITY**, an **AFDI (Autonomous Financial Defense Infrastructure)**. It integrates **Federated Learning** for private data collaboration and **Agentic Autonomy** for real-time threat remediation. It’s built to be **Quantum-Resistant** and **Privacy-First**."
+
+**Would you like me to help you write the logic for the "Poison Pill" (where the Agent actually blocks a fake attack) once you have the system running?**
