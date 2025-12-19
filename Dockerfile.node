@@ -1,0 +1,33 @@
+FROM python:3.9-slim
+
+# 1. Install System Dependencies & clean up cache immediately
+RUN apt-get update && apt-get install -y \
+    curl \
+    gnupg \
+    apt-transport-https \
+    iptables \
+    iproute2 \
+    procps \
+    lsb-release \
+    && mkdir -p /usr/share/keyrings \
+    && rm -rf /var/lib/apt/lists/*
+
+# 2. Add Wazuh Agent Repo
+RUN curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | gpg --dearmor -o /usr/share/keyrings/wazuh.gpg \
+    && echo "deb [signed-by=/usr/share/keyrings/wazuh.gpg] https://packages.wazuh.com/4.x/apt/ stable main" | tee /etc/apt/sources.list.d/wazuh.list
+
+# 3. Install SPECIFIC Version 4.7.2 to match Manager
+RUN apt-get update && apt-get install -y wazuh-agent=4.7.2-1 \
+    && rm -rf /var/lib/apt/lists/*
+
+# 4. Python Setup with NO CACHE
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# 5. Copy Code
+COPY . .
+
+# 6. Entrypoint
+RUN chmod +x /app/infrastructure/entrypoint.sh
+ENTRYPOINT ["/app/infrastructure/entrypoint.sh"]
