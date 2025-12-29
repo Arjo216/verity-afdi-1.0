@@ -1,6 +1,35 @@
-# 🛡️ Verity AFDI: AI-Federated Defense Interface
+# 🛡️ Verity AFDI: Auditable AI-Federated Defense Interface
 
-**Verity** is a decentralized Intrusion Detection & Active Response System (IDARS). It deploys a fleet of "AI Sentry Nodes" that protect critical infrastructure by detecting threats and autonomously executing firewall bans.
+**Verity** is a decentralized **Auditable Federated Learning (AFL)** Intrusion Detection & Active Response System (IDARS) designed for high-compliance financial environments. It deploys a fleet of "AI Sentry Nodes" that protect critical infrastructure by detecting threats and autonomously executing firewall bans. Unlike standard federated networks, Verity integrates an **Active Defense** layer that autonomously detects threats and executes firewall bans across distributed nodes.
+
+
+## 📜 Regulatory Compliance & Audit Readiness
+
+> **Regulatory Compliance:** This architecture addresses **SEBI's 2025 AI Responsibility Framework** requirements for "comprehensive internal approval trails" and "system-level records". By enforcing immutable logs of all automated defense decisions, Verity ensures that AI-driven active responses remain transparent, traceable, and fully auditable.
+
+*Aligned with SEBI AI/ML Responsibility Framework (Dec 2024)*
+
+This system is designed not just for security, but for **auditable governance** required by financial regulators.
+
+| Requirement | Implementation in AEGIS-OVERWATCH |
+| :--- | :--- |
+| **Audit Trails** | Full immutable logs of every security event (Wazuh Archives). |
+| **Active Defense** | Automated `iptables` bans providing evidence of threat neutralization. |
+| **Federated Privacy** | Gradient-only sharing ensures raw financial data never leaves the node. |
+| **Incident Reporting** | Centralized Dashboard (Port 443) for real-time regulator visibility. |
+
+---
+
+## 🛡️ Attack Simulation & Verification
+The system includes a custom penetration testing script (`attack_fleet.sh`) to validate defense readiness.
+
+### How to Run a Live Fire Test
+```bash
+# 1. Launch the coordinated attack simulation
+./attack_fleet.sh
+
+# 2. Watch the Active Response in real-time
+docker exec -u 0 zombie_node iptables -L INPUT -n
 
 ## 🏗️ Architecture (Level 3: Federated Grid)
 
@@ -82,3 +111,16 @@ This project is designed to run in **GitHub Codespaces** to ensure high-performa
    sudo sysctl -w vm.max_map_count=262144
    cd infrastructure
    docker-compose up --build
+
+
+## 🔮 Future Roadmap & Architectural Limitations
+
+While the current V3 architecture successfully implements federated active response, we acknowledge inherent constraints in container-based security.
+
+### ⚠️ Current Limitation: The "Kernel of Trust" Issue
+In the current Docker-based deployment, the Wazuh agent shares the host kernel with the containers it monitors. This creates a **Kernel of Trust** vulnerability: if a sophisticated attacker achieves a container escape or compromises the host kernel, they could theoretically blind or disable the security agent running alongside it.
+
+### 🚀 Roadmap: Hypervisor-Level Monitoring
+To resolve this, the next iteration (Verity V4) will move the detection engine from the container layer to the **Hypervisor Layer (KVM/Xen)**.
+* **Tamper-Proofing:** By running the agent outside the guest OS, security monitoring remains isolated from the workloads it protects.
+* **Introspection:** Use Virtual Machine Introspection (VMI) to analyze memory and system calls without relying on potentially compromised guest kernels.
