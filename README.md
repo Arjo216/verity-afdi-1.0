@@ -20,6 +20,18 @@ This system is designed not just for security, but for **auditable governance** 
 
 ---
 
+## 🛠️ The Technology Stack
+| Layer | Technology | Role |
+| :--- | :--- | :--- |
+| **Cognitive Engine** | PyTorch + Flower (FL) | Federated Learning across distributed nodes. |
+| **Assurance Layer** | LangGraph Agent | Autonomous threat detection and response. |
+| **Trust Layer** | EZKL / ZK-SNARKs | Proof of Inference & Validity. |
+| **Integrity Monitor** | Wazuh (SIEM) | Enterprise-grade endpoint security monitoring. |
+| **Defense Layer** | Liboqs (Kyber) | NIST-Standard Post-Quantum Cryptography. |
+| **Infrastructure** | Docker + Linux | Containerized, secure, and portable. |
+
+---
+
 ## 🛡️ Attack Simulation & Verification
 The system includes a custom penetration testing script (`attack_fleet.sh`) to validate defense readiness.
 
