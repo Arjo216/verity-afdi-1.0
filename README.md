@@ -72,6 +72,7 @@ graph TD
     Manager -- "3. KILL COMMAND: Drop IP" --> NodeAlpha & NodeBeta
     NodeAlpha -- "4. Execute Block" --> FirewallA
     NodeBeta -- "4. Execute Block" --> FirewallB
+
 ```
     
     # verity-afdi-1.0
