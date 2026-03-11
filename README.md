@@ -42,7 +42,7 @@ The system includes a custom penetration testing script (`attack_fleet.sh`) to v
 
 # 2. Watch the Active Response in real-time
 docker exec -u 0 zombie_node iptables -L INPUT -n
-
+```
 ## 🏗️ Architecture (Level 3: Federated Grid)
 
 
