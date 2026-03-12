@@ -1,7 +1,9 @@
 # 🛡️ Verity AFDI: Auditable AI-Federated Defense Interface
 
 **Verity** is a decentralized **Auditable Federated Learning (AFL)** Intrusion Detection & Active Response System (IDARS) designed for high-compliance financial environments. It deploys a fleet of "AI Sentry Nodes" that protect critical infrastructure by detecting threats and autonomously executing firewall bans. Unlike standard federated networks, Verity integrates an **Active Defense** layer that autonomously detects threats and executes firewall bans across distributed nodes.
+
 ---
+
 <p align="center">
   <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" alt="PyTorch" />
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
@@ -12,7 +14,9 @@
 </p>
 
 ## 📜 Regulatory Compliance & Audit Readiness
+
 ---
+
 > **Regulatory Compliance:** This architecture addresses **SEBI's 2025 AI Responsibility Framework** requirements for "comprehensive internal approval trails" and "system-level records". By enforcing immutable logs of all automated defense decisions, Verity ensures that AI-driven active responses remain transparent, traceable, and fully auditable.
 
 *Aligned with SEBI AI/ML Responsibility Framework (Dec 2024)*
