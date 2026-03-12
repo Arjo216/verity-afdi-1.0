@@ -2,6 +2,14 @@
 
 **Verity** is a decentralized **Auditable Federated Learning (AFL)** Intrusion Detection & Active Response System (IDARS) designed for high-compliance financial environments. It deploys a fleet of "AI Sentry Nodes" that protect critical infrastructure by detecting threats and autonomously executing firewall bans. Unlike standard federated networks, Verity integrates an **Active Defense** layer that autonomously detects threats and executes firewall bans across distributed nodes.
 
+<p align="center">
+  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" alt="PyTorch" />
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
+  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux" />
+  <img src="https://img.shields.io/badge/Elasticsearch-005571?style=for-the-badge&logo=elasticsearch&logoColor=white" alt="Elasticsearch" />
+  <img src="https://img.shields.io/badge/GitHub_Codespaces-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Codespaces" />
+</p>
 
 ## 📜 Regulatory Compliance & Audit Readiness
 
