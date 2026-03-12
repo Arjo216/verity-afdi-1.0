@@ -13,9 +13,9 @@
   <img src="https://img.shields.io/badge/GitHub_Codespaces-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Codespaces" />
 </p>
 
-## 📜 Regulatory Compliance & Audit Readiness
-
 ---
+
+## 📜 Regulatory Compliance & Audit Readiness
 
 > **Regulatory Compliance:** This architecture addresses **SEBI's 2025 AI Responsibility Framework** requirements for "comprehensive internal approval trails" and "system-level records". By enforcing immutable logs of all automated defense decisions, Verity ensures that AI-driven active responses remain transparent, traceable, and fully auditable.
 
