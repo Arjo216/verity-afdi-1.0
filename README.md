@@ -62,28 +62,67 @@ The system consists of a Central Command (The Brain) and Distributed Sentries (T
 
 ```mermaid
 graph TD
-    subgraph "Verity Core (Command Center)"
-        Manager[🛡️ Security Manager]
-        Indexer[🗄️ Threat Database]
-        Dashboard[📊 Live War Room]
-    end
-
-    subgraph "The Sentry Fleet (Edge Nodes)"
-        NodeAlpha[🤖 Node Alpha (Sentry)]
-        NodeBeta[🤖 Node Beta (Clone)]
-        
-        FirewallA[🔥 Active Firewall]
-        FirewallB[🔥 Active Firewall]
-    end
-
-    %% Intelligence Flow
-    NodeAlpha & NodeBeta -- "1. Report Threat Telemetry" --> Manager
-    Manager -- "2. Analyze & Decide" --> Indexer
+    %% Custom Enterprise Styling
+    classDef core fill:#0b132b,stroke:#3a86ff,stroke-width:3px,color:#fff,rx:10,ry:10
+    classDef node fill:#1c2541,stroke:#00b4d8,stroke-width:2px,color:#fff,rx:8,ry:8
+    classDef firewall fill:#780000,stroke:#ff4d4d,stroke-width:3px,color:#fff,rx:5,ry:5
+    classDef threat fill:#111111,stroke:#ff0000,stroke-width:2px,color:#ff4d4d,rx:12,ry:12,stroke-dasharray: 4 4
+    classDef crypto fill:#240046,stroke:#9d4edd,stroke-width:2px,color:#fff,rx:8,ry:8,stroke-dasharray: 5 5
     
-    %% Active Response Loop
-    Manager -- "3. KILL COMMAND: Drop IP" --> NodeAlpha & NodeBeta
-    NodeAlpha -- "4. Execute Block" --> FirewallA
-    NodeBeta -- "4. Execute Block" --> FirewallB
+    %% Threat Entity
+    Attacker[☠️ External Threat Actor<br/>Malicious Exploits & Brute Force]:::threat
+
+    %% --- Layer 1: The Trust & Privacy Sphere ---
+    subgraph Privacy [Zero-Trust & Quantum Security Layer]
+        direction LR
+        ZK[🔐 EZKL ZK-SNARKs<br/>Proof of Inference]:::crypto
+        PQC[🌌 Kyber Liboqs<br/>Post-Quantum Cryptography]:::crypto
+    end
+
+    %% --- Layer 2: The Command Core ---
+    subgraph Core [Verity AFDI Command Center]
+        direction TB
+        Dashboard[📊 Live War Room<br/>Real-Time Auditing Dashboard]:::core
+        Manager[🛡️ AI Security Manager<br/>Global Intelligence & Aggregation]:::core
+        Indexer[🗄️ Immutable Threat Database<br/>SEBI Compliance & Audit Logs]:::core
+
+        Manager <==>|Synchronizes| Indexer
+        Indexer ==>|Visualizes| Dashboard
+    end
+
+    %% --- Layer 3: The Distributed Edge ---
+    subgraph Edge [Federated Sentry Fleet]
+        direction LR
+        
+        subgraph VaultA [Node Alpha Vault]
+            direction TB
+            AI_A[🧠 AI Sentry Agent 002]:::node
+            FW_A[🔥 Active Firewall]:::firewall
+        end
+        
+        subgraph VaultB [Node Beta Vault]
+            direction TB
+            AI_B[🧠 AI Sentry Agent 003]:::node
+            FW_B[🔥 Active Firewall]:::firewall
+        end
+    end
+
+    %% --- The Active Defense Loop Flow ---
+    Attacker -.->|1. Initiates Attack| FW_A & FW_B
+    
+    FW_A -->|2. Threat Telemetry| AI_A
+    FW_B -->|2. Threat Telemetry| AI_B
+    
+    AI_A & AI_B == "3. Encrypted Logs" ==> Manager
+    Manager == "4. KILL COMMAND: Global IP Ban" ==> AI_A & AI_B
+    
+    AI_A ==>|5. Enforce DROP Rule| FW_A
+    AI_B ==>|5. Enforce DROP Rule| FW_B
+    FW_A & FW_B -.->|6. Traffic Neutralized| Attacker
+    
+    %% --- The Cryptographic Flow ---
+    AI_A & AI_B -.->|Secure FL Gradients| ZK
+    Manager -.->|Secured by| PQC
 ```
     
     # verity-afdi-1.0
