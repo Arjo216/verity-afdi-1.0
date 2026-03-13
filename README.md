@@ -84,7 +84,7 @@ graph TD
     Manager -- "3. KILL COMMAND: Drop IP" --> NodeAlpha & NodeBeta
     NodeAlpha -- "4. Execute Block" --> FirewallA
     NodeBeta -- "4. Execute Block" --> FirewallB
- ```
+```
     
     # verity-afdi-1.0
 VERITY: A Self-Healing, Privacy-Preserving Autonomous Financial Defense Infrastructure (AFDI). Built with Federated Learning, Post-Quantum Cryptography, and Agentic Security.
